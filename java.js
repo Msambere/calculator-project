@@ -1,32 +1,35 @@
-function add() {
-    const numbers = Array.from(arguments);
-    const sum =numbers.reduce((accumulator, currentValue) => accumulator + currentValue,0);
-    return sum;
+//Number and operator variables
+const num1 = 3;
+const num2 = 5;
+const operator = add();
+
+
+// operate function
+
+function operate (){
+    operator(num1,num2);
+};
+
+
+// Basic Math functions
+function add(a,b) {
+    return a+b;
   };
 
-function subtract() {
-    const numbers = Array.from(arguments);
-    const difference =numbers.reduce((accumulator, currentValue) => accumulator - currentValue);
-    return difference;
+function subtract(a,b) {
+    return a-b;
   };
   
-function multiply() {
-    const numbers = Array.from(arguments);
-    const product =numbers.reduce((accumulator, currentValue) => accumulator*currentValue);
-    return product;
+function multiply(a,b) {
+    return a*b;
   };
 
-function divide(){
-    const numbers = Array.from(arguments);
-    const quotient = numbers.reduce((accumulator, currentValue) => accumulator/currentValue);
-    return quotient;
+function divide(a,b){
+    return a/b;
 };
   
-function power() {
-    const numbers = Array.from(arguments);
-    const results =numbers.reduce((accumulator, currentValue) => accumulator**currentValue);
-    return results;
-      
+function power(a,b) {
+    return a**b
   };
   
 function factorial(num) {

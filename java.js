@@ -11,12 +11,14 @@ function subtract() {
   };
   
 function multiply() {
-    const product =arguments[0].reduce((accumulator, currentValue) => accumulator*currentValue);
+    const numbers = Array.from(arguments);
+    const product =numbers.reduce((accumulator, currentValue) => accumulator*currentValue);
     return product;
   };
 
 function divide(){
-    const quotient = arguments[0].reduce((accumulator, currentValue) => accumulator/currentValue);
+    const numbers = Array.from(arguments);
+    const quotient = numbers.reduce((accumulator, currentValue) => accumulator/currentValue);
     return quotient;
 };
   

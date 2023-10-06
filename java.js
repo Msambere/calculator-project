@@ -1,13 +1,46 @@
 //Number and operator variables
-const num1 = 3;
-const num2 = 5;
-const operator = add();
-
+//const numbers = document.querySelectorAll('.number');
+//numbers.forEach((number)=>document.addEventListener('click',assignNum1));
+const operators = document.querySelectorAll('.operator')
+operators.forEach((operator) => document.addEventListener('click', assignOperator));
+const equals = document.querySelector('.equal');
+equals.addEventListener('click', operate);
+let num1 = 3;
+let num2 = 4;
+//Display functions
+const display =document.querySelector('.display');
+//const problem = `${num1} ${operator} ${num2}`
+display.textContent = '';
+display.style.color ='black';
 
 // operate function
 
+function assignNum1(e){
+    console.log(e.target.textContent)
+    return num1+= e.target.textContent;
+};
+
+function assignNum2(e){
+    console.log(e.target.textContent)
+    return num2+= e.target.textContent;
+}
+
+function assignOperator(e){
+    //numbers.forEach((number)=>document.removeEventListener('click',assignNum1));
+    //numbers.forEach((number)=>document.addEventListener('click',assignNum2));
+    return operator = e.target.textContent;
+}
+
 function operate (){
-    operator(num1,num2);
+    if (operator === '+'){
+        return display.textContent= add(num1,num2);
+    } else if (operator === '-'){
+        return display.textContent= subtract(num1,num2);
+    } else if (operator === '*'){
+        return display.textContent= multiply(num1,num2);
+    }else if (operator === '/'){
+        return display.textContent= divide(num1,num2);
+    };
 };
 
 
@@ -25,7 +58,11 @@ function multiply(a,b) {
   };
 
 function divide(a,b){
-    return a/b;
+    if (b==0){
+        return "No No No don't divide by 0!";
+    }else {
+    return (a/b).toFixed(4);
+    };
 };
   
 function power(a,b) {

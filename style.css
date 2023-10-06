@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.display{
+    border: 1px solid black;
+    height: 50px;
+    width: 500px;
+    font-size: large;
+    color: black;
+}
+
+button{
+    font-size: large;
+}

@@ -35,6 +35,7 @@ function assignNum2(e){
 function assignOperator(e){
     numbers.forEach((number)=>number.removeEventListener('click',assignNum1));
     numbers.forEach((number)=>number.addEventListener('click',assignNum2));
+    operate();
     display.textContent += e.target.textContent;
     return operator = e.target.textContent;
 }
@@ -42,18 +43,30 @@ function assignOperator(e){
 function operate (){
     num1 = parseInt(num1);
     num2=parseInt(num2);
-    if (operator === '+'){
+    if (!num2){
+        num2=''
+        return;
+    }else if (operator === '+'){
         solution =add(num1,num2);
+        num1= solution;
+        num2 = '';
+        return display.textContent= solution;
     } else if (operator === '-'){
         solution = subtract(num1,num2);
+        num1= solution;
+        num2 = '';
+        return display.textContent= solution;
     } else if (operator === '*'){
         solution = multiply(num1,num2);
+        num1= solution;
+        num2 = '';
+        return display.textContent= solution;
     }else if (operator === '/'){
         solution = divide(num1,num2);
+        num1= solution;
+        num2 = '';
+        return display.textContent= solution;
     };
-    num1= solution;
-    num2 = '';
-    return display.textContent= solution;
 };
 
 function clearCalc(){

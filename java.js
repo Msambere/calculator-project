@@ -44,14 +44,17 @@ function operate (){
     num1 = parseInt(num1);
     num2=parseInt(num2);
     if (operator === '+'){
-        return display.textContent= add(num1,num2);
+        solution =add(num1,num2);
     } else if (operator === '-'){
-        return display.textContent= subtract(num1,num2);
+        solution = subtract(num1,num2);
     } else if (operator === '*'){
-        return display.textContent= multiply(num1,num2);
+        solution = multiply(num1,num2);
     }else if (operator === '/'){
-        return display.textContent= divide(num1,num2);
+        solution = divide(num1,num2);
     };
+    num1= solution;
+    num2 = '';
+    return display.textContent= solution;
 };
 
 
@@ -72,7 +75,7 @@ function divide(a,b){
     if (b==0){
         return "No No No don't divide by 0!";
     }else {
-    return (a/b).toFixed(4);
+    return Math.round((a/b)*10000)/10000;
     };
 };
   

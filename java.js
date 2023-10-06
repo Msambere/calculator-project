@@ -2,6 +2,9 @@
 const equals = document.querySelector('.equal');
 equals.addEventListener('click', operate);
 
+const clear = document.querySelector('.clear');
+clear.addEventListener('click', clearCalc)
+
 const operators = document.querySelectorAll('.operator')
 operators.forEach((operator) => operator.addEventListener('click', assignOperator));
 
@@ -20,13 +23,11 @@ display.style.color ='black';
 // operate function
 
 function assignNum1(e){
-    console.log(`assignNum1 ran, ${e.target.textContent}`);
     display.textContent += e.target.textContent
     return num1 += e.target.textContent
 };
 
 function assignNum2(e){
-   console.log(`assignNum2 ran, ${e.target.textContent}`);
    display.textContent += e.target.textContent
    return num2 += e.target.textContent;
 }
@@ -34,13 +35,11 @@ function assignNum2(e){
 function assignOperator(e){
     numbers.forEach((number)=>number.removeEventListener('click',assignNum1));
     numbers.forEach((number)=>number.addEventListener('click',assignNum2));
-    display.textContent += e.target.textContent
-    console.log(`assignOperator ran, ${e.target.textContent}`);
+    display.textContent += e.target.textContent;
     return operator = e.target.textContent;
 }
 
 function operate (){
-    console.log(`operate ran`);
     num1 = parseInt(num1);
     num2=parseInt(num2);
     if (operator === '+'){
@@ -56,6 +55,14 @@ function operate (){
     num2 = '';
     return display.textContent= solution;
 };
+
+function clearCalc(){
+    num1 ='';
+    num2='';
+    numbers.forEach((number)=>number.addEventListener('click',assignNum1));
+    numbers.forEach((number)=>number.removeEventListener('click',assignNum2));
+    return display.textContent = '';
+}
 
 
 // Basic Math functions

@@ -7,30 +7,36 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="display"></div>
-        <div class="container" id ="numbers">
-            <button class="number" id="0">0</button>
-            <button class="number" id="1">1</button>
-            <button class="number" id="2">2</button>
-            <button class="number" id="3">3</button>
-            <button class="number" id="4">4</button>
-            <button class="number" id="5">5</button>
-            <button class="number" id="6">6</button>
-            <button class="number" id="7">7</button>
-            <button class="number" id="8">8</button>
-            <button class="number" id="9">9</button>
+        <h1>It works, kinda...</h1>
+        <h3>It's a calculated risk</h3>
+        <div class="calcbody">
+            <div class="display">
+                <div class="display1"></div>
+                <div class="display2"></div>
+            </div>
+            <div class = 'reset'>
+                <button class="backspace" id ='bksp'>bksp</button>
+                <button class="clear" id="clearbtn">clear</button>
+            </div>
+            <div class ='buttons'>
+                <button class="number" id="7">7</button>
+                <button class="number" id="8">8</button>
+                <button class="number" id="9">9</button>
+                <button class="operator" id="/">/</button>
+                <button class="number" id="4">4</button>
+                <button class="number" id="5">5</button>
+                <button class="number" id="6">6</button>
+                <button class="operator" id="*">*</button>
+                <button class="number" id="1">1</button>
+                <button class="number" id="2">2</button>
+                <button class="number" id="3">3</button>
+                <button class="operator" id="-">-</button>
+                <button class="number" id ="decimal">.</button>
+                <button class="number" id="0">0</button>
+                <button class="equals" id="equals">=</button>
+                <button class="operator" id="+">+</button>
+                </div>
+            </div>
         </div>
-        <div class ="container" id="operations">
-            <button class="operator" id="+">+</button>
-            <button class="operator" id="-">-</button>
-            <button class="operator" id="*">*</button>
-            <button class="operator" id="/">/</button>
-            <button class="equal" id="=">=</button>
-            <button class="clear" id="clearbtn">clear</button>
-        </div>
-        <script>
-            const display2 = document.querySelector('.display');
-        </script>
-
     </body>
 </html>
